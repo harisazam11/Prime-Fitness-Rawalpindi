@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prime Fitness | Rawalpindi's Premier Gym</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap"
-    rel="stylesheet">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --black: #0a0a0a;
@@ -66,7 +61,7 @@
       color: var(--white);
     }
     .nav-logo-text span { color: var(--gold); }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links { display: flex; gap: clamp(14px, 2.2vw, 36px); list-style: none; }
     .nav-links a {
       text-decoration: none;
       color: var(--muted);
@@ -101,8 +96,8 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 5% 80px;
+      justify-content: center;
+      padding: 160px 5% 80px;
       position: relative;
       overflow: hidden;
       margin-top: -72px;
@@ -152,7 +147,7 @@
     .hero-eyebrow::before { content: ''; width: 36px; height: 2px; background: var(--gold); }
     .hero h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 9vw, 8rem);
+      font-size: clamp(3rem, 6.5vw, 8rem);
       line-height: 0.92;
       letter-spacing: 2px;
       margin-bottom: 28px;
@@ -236,7 +231,7 @@
 
     /* SECTION UTILITY */
     section { padding: 100px 5%; }
-    section.hero { padding: 0 5% 80px; }
+    section.hero { padding: 160px 5% 80px; }
 
     .section-eyebrow {
       font-family: 'Barlow Condensed', sans-serif;
@@ -272,13 +267,13 @@
       background: var(--deep);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: clamp(32px, 5vw, 80px);
       align-items: center;
     }
     .about-images {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 240px 240px;
+      grid-template-rows: clamp(160px, 18vw, 240px) clamp(160px, 18vw, 240px);
       gap: 12px;
       position: relative;
     }
@@ -388,7 +383,7 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(2, 280px);
+      grid-template-rows: repeat(2, clamp(180px, 20vw, 280px));
       gap: 8px;
       margin-top: 60px;
     }
@@ -453,7 +448,7 @@
     .transformations { background: var(--black); }
     .transforms-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       margin-top: 60px;
     }
@@ -510,7 +505,7 @@
 
     /* TIMINGS */
     .timings { background: var(--black); }
-    .timings-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
+    .timings-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 80px); margin-top: 60px; }
     .timing-block { border: 1px solid var(--border); padding: 40px; }
     .timing-title {
       font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem;
@@ -561,7 +556,7 @@
 
     /* FOOTER */
     footer { background: var(--deep); border-top: 1px solid var(--border); padding: 60px 5% 32px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 60px; margin-bottom: 48px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: clamp(24px, 4vw, 60px); margin-bottom: 48px; }
     .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 3px; margin-bottom: 16px; }
     .footer-logo span { color: var(--gold); }
     .footer-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; font-weight: 300; }
@@ -586,8 +581,19 @@
     .footer-rating { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--muted); }
     .footer-rating strong { color: var(--gold); }
 
+    /* RESPONSIVE — LAPTOP (1024–1280px) */
+    @media (max-width: 1280px) {
+      nav { padding: 0 3%; }
+      section { padding: 80px 4%; }
+      section.hero { padding: 160px 4% 70px; }
+      .packages-grid { grid-template-columns: repeat(3, 1fr); }
+      .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-stats { gap: 32px; }
+    }
+
     /* RESPONSIVE — TABLET */
     @media (max-width: 1024px) {
+      .hero { padding: 140px 5% 80px; }
       .about { grid-template-columns: 1fr; }
       .about-images { max-width: 500px; }
       .packages-grid { grid-template-columns: 1fr; max-width: 480px; margin: 60px auto 0; }
@@ -604,7 +610,7 @@
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
 
-      .hero { padding-bottom: 60px; }
+      .hero { padding: 120px 5% 60px; }
 
       .hero-img-slot { display: block; }
 
@@ -642,7 +648,7 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="logo.png" alt="Prime Fitness Logo" style="width:42px;height:42px;object-fit:contain;">
+      <img src="images/logo.png" alt="Prime Fitness Logo" style="width:42px;height:42px;object-fit:contain;">
       <span class="nav-logo-text">PRIME <span>FITNESS</span></span>
     </a>
     <ul class="nav-links">
@@ -661,9 +667,8 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-img-slot">
-      <img src="hero.jpg" alt="Prime Fitness Gym"
-        onerror="this.parentElement.style.background='linear-gradient(135deg, #1a1a1a 0%, #222 100%)'">
+    <div class="hero-img-slot" style="background: linear-gradient(135deg, rgb(26, 26, 26) 0%, rgb(34, 34, 34) 100%);">
+      <img src="images/hero.jpg" alt="Prime Fitness Gym" onerror="this.parentElement.style.background='linear-gradient(135deg, #1a1a1a 0%, #222 100%)'">
     </div>
     <div class="hero-bg"></div>
 
@@ -700,13 +705,13 @@
   <section class="about" id="about">
     <div class="about-images reveal">
       <div class="about-img tall">
-        <img src="gym-floor.jpg" alt="Gym Floor">
+        <img src="images/gym-floor.jpg" alt="Gym Floor">
       </div>
       <div class="about-img">
-        <img src="equip.jpg" alt="Equipment">
+        <img src="images/equip.jpg" alt="Equipment">
       </div>
       <div class="about-img">
-        <img src="training.jpg" alt="Training">
+        <img src="images/training.jpg" alt="Training">
       </div>
       <div class="about-badge">
         <div class="about-badge-num">24H</div>
@@ -817,31 +822,31 @@
     <div class="gallery-grid reveal reveal-delay-1">
       <div class="gallery-item">
         <div class="gallery-placeholder">
-          <img src="gym-floor-2.jpg" alt="Gym Floor">
+          <img src="images/gym-floor-2.jpg" alt="Gym Floor">
         </div>
         <div class="gallery-label">Main Floor</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-placeholder">
-          <img src="cardio.jpg" alt="Cardio">
+          <img src="images/cardio.jpg" alt="Cardio">
         </div>
         <div class="gallery-label">Cardio Floor</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-placeholder">
-          <img src="weights.jpg" alt="Weights">
+          <img src="images/weights.jpg" alt="Weights">
         </div>
         <div class="gallery-label">Weights</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-placeholder">
-          <img src="locker-room.jpg" alt="Locker Room">
+          <img src="images/locker-room.jpg" alt="Locker Room">
         </div>
         <div class="gallery-label">Locker Room</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-placeholder">
-          <img src="reception.jpg" alt="Reception">
+          <img src="images/reception.jpg" alt="Reception">
         </div>
         <div class="gallery-label">Reception</div>
       </div>
@@ -857,7 +862,7 @@
     <div class="transforms-grid reveal reveal-delay-1">
       <!-- FIX: all 4 cards now use the same clean structure -->
       <div class="transform-card">
-        <img src="trans-4.jpg" alt="90 Day Transformation" class="transform-img">
+        <img src="images/trans-4.jpg" alt="90 Day Transformation" class="transform-img">
         <div class="transform-body">
           <div class="transform-days">90 DAYS</div>
           <div class="transform-label">Transformation</div>
@@ -865,7 +870,7 @@
       </div>
 
       <div class="transform-card">
-        <img src="trans-2.jpg" alt="90 Day Transformation" class="transform-img">
+        <img src="images/trans-2.jpg" alt="90 Day Transformation" class="transform-img">
         <div class="transform-body">
           <div class="transform-days">90 DAYS</div>
           <div class="transform-label">Transformation</div>
@@ -873,7 +878,7 @@
       </div>
 
       <div class="transform-card">
-        <img src="trans-3.jpg" alt="90 Day Transformation" class="transform-img">
+        <img src="images/trans-3.jpg" alt="90 Day Transformation" class="transform-img">
         <div class="transform-body">
           <div class="transform-days">90 DAYS</div>
           <div class="transform-label">Transformation</div>
@@ -881,7 +886,7 @@
       </div>
 
       <div class="transform-card">
-        <img src="trans-1.jpg" alt="90 Day Transformation" class="transform-img">
+        <img src="images/trans-1.jpg" alt="90 Day Transformation" class="transform-img">
         <div class="transform-body">
           <div class="transform-days">90 DAYS</div>
           <div class="transform-label">Transformation</div>
@@ -1035,9 +1040,7 @@
       </div>
 
       <div class="map-container reveal reveal-delay-1">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4494.139267658875!2d73.0709672!3d33.632715399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df9550093fa637%3A0x9f8a79870547296b!2sPrime%20Fitness!5e1!3m2!1sen!2s!4v1780586272747!5m2!1sen!2s"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4494.139267658875!2d73.0709672!3d33.632715399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df9550093fa637%3A0x9f8a79870547296b!2sPrime%20Fitness!5e1!3m2!1sen!2s!4v1780586272747!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -1130,5 +1133,6 @@
       navLinks.forEach(a => { a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--gold)' : ''; });
     });
   </script>
-</body>
-</html>
+
+
+</body></html>
